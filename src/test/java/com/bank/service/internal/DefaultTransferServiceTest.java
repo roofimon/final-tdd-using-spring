@@ -1,9 +1,18 @@
 package com.bank.service.internal;
 
+import static com.bank.repository.internal.SimpleAccountRepository.Data.A123_ID;
+import static com.bank.repository.internal.SimpleAccountRepository.Data.A123_INITIAL_BAL;
+import static com.bank.repository.internal.SimpleAccountRepository.Data.C456_ID;
+import static com.bank.repository.internal.SimpleAccountRepository.Data.C456_INITIAL_BAL;
+import static com.bank.repository.internal.SimpleAccountRepository.Data.Z999_ID;
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.*;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyDouble;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import org.joda.time.LocalTime;
 import org.junit.Before;
@@ -12,15 +21,9 @@ import org.junit.Test;
 import com.bank.domain.Account;
 import com.bank.domain.InsufficientFundsException;
 import com.bank.domain.TransferReceipt;
-
 import com.bank.repository.AccountNotFoundException;
 import com.bank.repository.AccountRepository;
 import com.bank.repository.internal.SimpleAccountRepository;
-import static com.bank.repository.internal.SimpleAccountRepository.Data.A123_ID;
-import static com.bank.repository.internal.SimpleAccountRepository.Data.A123_INITIAL_BAL;
-import static com.bank.repository.internal.SimpleAccountRepository.Data.C456_ID;
-import static com.bank.repository.internal.SimpleAccountRepository.Data.C456_INITIAL_BAL;
-import static com.bank.repository.internal.SimpleAccountRepository.Data.Z999_ID;
 
 import com.bank.service.FeePolicy;
 import com.bank.service.OutOfServiceException;
@@ -135,16 +138,9 @@ public class DefaultTransferServiceTest {
         double overage = 9.00;
         double transferAmount = A123_INITIAL_BAL + overage;
 
-        //try {
             transferService.transfer(transferAmount, A123_ID, C456_ID);
-            fail("expected InsufficientFundsException");
-        //} catch (InsufficientFundsException ex) {
-        //    assertThat(ex.getTargetAccountId(), equalTo(A123_ID));
-        //    assertThat(ex.getOverage(), equalTo(overage));
-        //}
+            //fail("expected InsufficientFundsException");
 
-        //assertThat(accountRepository.findById(A123_ID).getBalance(), equalTo(A123_INITIAL_BAL));
-        //assertThat(accountRepository.findById(C456_ID).getBalance(), equalTo(C456_INITIAL_BAL));
     }
 
     @Test
