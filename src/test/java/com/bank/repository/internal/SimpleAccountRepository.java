@@ -32,9 +32,8 @@ public class SimpleAccountRepository implements AccountRepository {
         public static final double A123_INITIAL_BAL = 100.00;
         public static final double C456_INITIAL_BAL = 0.00;
     }
-    @SuppressWarnings("serial")
+    @SuppressWarnings(value = "serial")
     private final Map<String, Account> accountsById = new HashMap<String, Account>() {
-
         {
             put(Data.A123_ID, new Account(Data.A123_ID, Data.A123_INITIAL_BAL));
             put(Data.C456_ID, new Account(Data.C456_ID, Data.C456_INITIAL_BAL));

@@ -23,6 +23,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bank.domain.Account;
+import com.bank.domain.InsufficientFundsException;
 import com.bank.domain.TransferReceipt;
 import com.bank.repository.AccountRepository;
 import com.bank.service.FeePolicy;
@@ -61,10 +62,7 @@ public class DefaultTransferService implements TransferService {
 
 	@Override
 	@Transactional
-	public TransferReceipt transfer(
-			double amount,
-			String srcAcctId,
-			String dstAcctId) {
+	public TransferReceipt transfer(double amount, String srcAcctId, String dstAcctId) throws InsufficientFundsException{
 		if (amount < minimumTransferAmount) {
 			throw new IllegalArgumentException(format("transfer amount must be at least $%.2f", minimumTransferAmount));
 		}
@@ -82,13 +80,22 @@ public class DefaultTransferService implements TransferService {
 
 		double fee = feePolicy.calculateFee(amount);
 		if (fee > 0) {
-			srcAcct.debit(fee);
+			try {
+				srcAcct.debit(fee);
+			} catch (InsufficientFundsException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		receipt.setTransferAmount(amount);
 		receipt.setFeeAmount(fee);
 
-		srcAcct.debit(amount);
+		try {
+			srcAcct.debit(amount);
+		} catch (InsufficientFundsException e) {
+			throw new InsufficientFundsException(srcAcct, amount);
+		}
 		dstAcct.credit(amount);
 
 		accountRepository.updateBalance(srcAcct);

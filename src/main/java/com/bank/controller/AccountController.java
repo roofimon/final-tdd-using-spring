@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bank.domain.Account;
+import com.bank.domain.InsufficientFundsException;
 import com.bank.domain.TransferReceipt;
 import com.bank.repository.AccountRepository;
 import com.bank.service.TransferService;
@@ -43,7 +44,7 @@ public class AccountController {
 	@RequestMapping(value = "/{srcId}/transfer/{amount}/to/{destId}")
 	public TransferReceipt handleTransfer(@PathVariable("srcId") String srcId,
 			@PathVariable("amount") double amount,
-			@PathVariable("destId") String destId) {
+			@PathVariable("destId") String destId) throws InsufficientFundsException {
 		return service.transfer(amount, srcId, destId);
 	}
 }

@@ -42,10 +42,9 @@ public class Account {
 		return new Account(account.getId(), account.getBalance());
 	}
 
-	public void debit(double amount) {
+	public void debit(double amount) throws InsufficientFundsException {
 		assertValid(amount);
-		if (amount > balance)
-			throw new InsufficientFundsException(this, amount);
+		if (amount > balance) throw new InsufficientFundsException(this, amount);
 
 		balance -= amount;
 	}

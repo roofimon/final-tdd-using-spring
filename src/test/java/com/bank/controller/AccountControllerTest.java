@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.bank.domain.Account;
+import com.bank.domain.InsufficientFundsException;
 import com.bank.repository.AccountRepository;
 import com.bank.service.TransferService;
 
@@ -30,7 +31,7 @@ public class AccountControllerTest {
 	}
 	
 	@Test
-	public void testHandleTransfer() {
+	public void testHandleTransfer() throws InsufficientFundsException {
     	//given
 		String srcId = "A123";
 		String destId = "B123";
