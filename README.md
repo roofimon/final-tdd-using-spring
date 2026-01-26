@@ -37,14 +37,47 @@ mvn clean package
 ```
 
 ## Run (Deployment)
-This project packages as a WAR. Deploy `target/djackatron2.war` to a compliant Servlet container (e.g., Tomcat 9/10 or Jetty 9+). The legacy Jetty Maven plugin defined in `pom.xml` is not guaranteed to work on modern JDKs.
+This project packages as a WAR (`target/odtBank.war`). Deploy to a compliant Servlet container or use Docker.
+
+### Option 1: Docker (Recommended)
+Build and run the application in a containerized environment:
+
+```bash
+# Build Docker image
+docker build -t odtbank:latest .
+
+# Run container (port 8080)
+docker run -d -p 8080:8080 --name odtbank odtbank:latest
+
+# View logs
+docker logs -f odtbank
+
+# Stop container
+docker stop odtbank
+```
+
+**Stack**: Java 21 (Temurin), Tomcat 9.0.89, Spring 5.3.36
+
+### Option 2: Manual Deployment
+Deploy `target/odtBank.war` to a compliant Servlet container (e.g., Tomcat 9 with Servlet 4 support). The legacy Jetty Maven plugin defined in `pom.xml` is not guaranteed to work on modern JDKs.
+
+**Note**: Tomcat 10+ requires Jakarta Servlet API; this project uses `javax.servlet`, so Tomcat 9 is recommended.
 
 ## API Endpoints
 Controller: `AccountController`
-- GET `/account/{id}` — Retrieve an account by ID
-- GET `/account/{srcId}/transfer/{amount}/to/{destId}` — Transfer `amount` from `srcId` to `destId`
+- GET `/odtBank/account/{id}` — Retrieve an account by ID
+- GET `/odtBank/account/{srcId}/transfer/{amount}/to/{destId}` — Transfer `amount` from `srcId` to `destId`
 
 Responses are simple JSON/XML depending on the configured message converters.
+
+### Example Requests
+```bash
+# List account (replace {id} with actual ID from test-data.sql)
+curl http://localhost:8080/odtBank/account/1
+
+# Transfer funds
+curl http://localhost:8080/odtBank/account/1/transfer/50/to/2
+```
 
 ## Configuration
 - Spring context and beans are defined in `src/main/resources/META-INF/spring/spring-context.xml`.
