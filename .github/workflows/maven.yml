@@ -29,12 +29,6 @@ jobs:
         cache: maven
     - name: Compile with Maven
       run: mvn -B compile --file pom.xml
-    - name: Upload compiled classes
-      uses: actions/upload-artifact@v4
-      with:
-        name: compiled-classes
-        path: target/
-        retention-days: 1
 
   test:
     name: Test
@@ -49,11 +43,6 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-    - name: Download compiled classes
-      uses: actions/download-artifact@v4
-      with:
-        name: compiled-classes
-        path: target/
     - name: Test with Maven
       run: mvn -B test --file pom.xml
 
@@ -70,13 +59,8 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-    - name: Download compiled classes
-      uses: actions/download-artifact@v4
-      with:
-        name: compiled-classes
-        path: target/
     - name: Build with Maven
-      run: mvn -B package -DskipTests --file pom.xml
+      run: mvn -B package --file pom.xml
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
