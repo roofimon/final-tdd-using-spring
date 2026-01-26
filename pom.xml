@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bank</groupId>
-	<artifactId>djackatron2</artifactId>
+	<artifactId>odtbank</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>djackatron2 Maven Webapp</name>
+	<name>odtbank Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -71,7 +71,7 @@
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
+			<artifactId>javax.servlet-api</artifactId>
 			<version>${servlet.api.version}</version>
 			<scope>provided</scope>
 		</dependency>
@@ -88,9 +88,27 @@
 			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.7.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
-		<finalName>odtBank</finalName>
+		<finalName>odtbank</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -154,7 +172,7 @@
 		<slf4j.version>1.7.36</slf4j.version>
 		<aspectj.version>1.9.21</aspectj.version>
 		<hsqldb.version>1.8.0.10</hsqldb.version>
-		<servlet.api.version>2.5</servlet.api.version>
+		<servlet.api.version>3.1.0</servlet.api.version>
 		<jetty.version>7.4.0.v20110414</jetty.version>
 	</properties>
 	<repositories>
