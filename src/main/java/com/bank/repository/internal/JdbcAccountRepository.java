@@ -23,6 +23,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 
 import com.bank.domain.Account;
@@ -34,7 +35,7 @@ public class JdbcAccountRepository implements AccountRepository {
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public JdbcAccountRepository(DataSource dataSource) {
+    public JdbcAccountRepository(@NonNull DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
@@ -50,7 +51,7 @@ public class JdbcAccountRepository implements AccountRepository {
 
     private static class AccountRowMapper implements RowMapper<Account> {
         @Override
-        public Account mapRow(ResultSet rs, int rowNum) throws SQLException {
+        public Account mapRow(@NonNull ResultSet rs, int rowNum) throws SQLException {
             return new Account(rs.getString("id"), rs.getDouble("balance"));
         }
     }

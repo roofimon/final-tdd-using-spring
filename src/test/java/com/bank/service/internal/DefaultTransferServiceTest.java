@@ -121,7 +121,7 @@ public class DefaultTransferServiceTest {
 
 		// when
 		try {
-			TransferReceipt receipt = transferService.transfer(transferAmount, A123_ID, C456_ID);
+			transferService.transfer(transferAmount, A123_ID, C456_ID);
 			fail();
 		} catch (OutOfServiceException e) {
 			// then
