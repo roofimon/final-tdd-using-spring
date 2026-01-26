@@ -68,3 +68,7 @@ WARNING: Unmatched cancel notification for request id 137
 2026.01.26 11:53:14 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/repository/internal/JdbcAccountRepository.java. Using fallback presentation compiler.[0m
 2026.01.26 11:53:15 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/repository/internal/JdbcAccountRepository.java. Using fallback presentation compiler.[0m
 2026.01.26 11:53:15 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/repository/internal/JdbcAccountRepository.java. Using fallback presentation compiler.[0m
+2026.01.26 11:54:09 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/repository/internal/JdbcAccountRepository.java. Using fallback presentation compiler.[0m
+2026.01.26 12:02:36 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/controller/AccountController.java. Using fallback presentation compiler.[0m
+2026.01.26 12:02:36 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/controller/AccountController.java. Using fallback presentation compiler.[0m
+2026.01.26 12:03:30 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/repository/internal/JdbcAccountRepository.java. Using fallback presentation compiler.[0m
