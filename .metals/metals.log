@@ -1,0 +1,61 @@
+2026.01.26 11:02:48 INFO  Started: Metals version 1.6.5 in folders '/home/dude/Workspace/Java/final-tdd-using-spring' for client Visual Studio Code 1.108.0.[0m
+2026.01.26 11:02:48 INFO  Memory monitor started[0m
+2026.01.26 11:02:49 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.[0m
+2026.01.26 11:03:26 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/domain/InsufficientFundsException.java. Using fallback presentation compiler.[0m
+2026.01.26 11:03:26 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/domain/InsufficientFundsException.java. Using fallback presentation compiler.[0m
+2026.01.26 11:03:47 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/domain/InsufficientFundsException.java. Using fallback presentation compiler.[0m
+2026.01.26 11:03:47 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/domain/InsufficientFundsException.java. Using fallback presentation compiler.[0m
+2026.01.26 11:05:04 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/domain/InsufficientFundsException.java. Using fallback presentation compiler.[0m
+2026.01.26 11:05:14 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/domain/InsufficientFundsException.java. Using fallback presentation compiler.[0m
+Jan 26, 2026 11:05:14 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.01.26 11:05:21 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/domain/InsufficientFundsException.java. Using fallback presentation compiler.[0m
+2026.01.26 11:05:21 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:05:21 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:05:22 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:05:38 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:06:05 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:06:53 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:07:15 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/controller/AccountController.java. Using fallback presentation compiler.[0m
+2026.01.26 11:16:17 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:16:17 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:16:17 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:16:18 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:16:23 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:18:56 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:22:01 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:22:29 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:22:29 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:22:30 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:22:29 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:22:29 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:23:36 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:24:03 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:24:32 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:24:25 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:24:31 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:24:37 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:24:39 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:24:55 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:24:59 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:15 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:16 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:26 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:26 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:27 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:32 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/DefaultTransferServiceTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:32 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/FlatFeePolicyTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:32 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/FlatFeePolicyTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:32 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/FlatFeePolicyTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:36 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/FlatFeePolicyTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:36 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/FlatFeePolicyTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:36 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/FlatFeePolicyTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:25:37 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/FlatFeePolicyTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:26:27 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/FlatFeePolicyTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:26:27 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/FlatFeePolicyTest.java. Using fallback presentation compiler.[0m
+Jan 26, 2026 11:26:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 137
+2026.01.26 11:27:05 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/test/java/com/bank/service/internal/FlatFeePolicyTest.java. Using fallback presentation compiler.[0m
+2026.01.26 11:27:33 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/repository/internal/JdbcAccountRepository.java. Using fallback presentation compiler.[0m
+2026.01.26 11:27:33 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/repository/internal/JdbcAccountRepository.java. Using fallback presentation compiler.[0m
+2026.01.26 11:27:33 INFO  no build target found for /home/dude/Workspace/Java/final-tdd-using-spring/src/main/java/com/bank/repository/internal/JdbcAccountRepository.java. Using fallback presentation compiler.[0m
