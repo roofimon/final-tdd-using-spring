@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bank.domain.Account;
 import com.bank.domain.InsufficientFundsException;
@@ -37,13 +38,14 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@ResponseBody
 	public Account handleById(@PathVariable("id") String accId) {
 		return repository.findById(accId);
 	}
 
 	@RequestMapping(value = "/{srcId}/transfer/{amount}/to/{destId}")
-	public TransferReceipt handleTransfer(@PathVariable("srcId") String srcId,
-			@PathVariable("amount") double amount,
+	@ResponseBody
+	public TransferReceipt handleTransfer(@PathVariable("srcId") String srcId, @PathVariable("amount") double amount,
 			@PathVariable("destId") String destId) throws InsufficientFundsException {
 		return service.transfer(amount, srcId, destId);
 	}
