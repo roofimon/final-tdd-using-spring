@@ -15,13 +15,16 @@
  */
 package com.bank.service.internal;
 
+import lombok.Getter;
 import org.joda.time.LocalTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bank.domain.Account;
 import com.bank.domain.InsufficientFundsException;
+import com.bank.domain.TransferCompletedEvent;
 import com.bank.domain.TransferReceipt;
 import com.bank.repository.AccountRepository;
 import com.bank.repository.AccountNotFoundException;
@@ -36,21 +39,22 @@ public class DefaultTransferService implements TransferService {
 
 	private final AccountRepository accountRepository;
 	private final FeePolicy feePolicy;
+	private final ApplicationEventPublisher eventPublisher;
 	private double minimumTransferAmount = 1.00;
-	private TimeService timeService;
+	@Getter
+    private TimeService timeService;
 
 	@Autowired
-	public DefaultTransferService(AccountRepository accountRepository,
-			FeePolicy feePolicy) {
+	public DefaultTransferService(
+			AccountRepository accountRepository,
+			FeePolicy feePolicy,
+			ApplicationEventPublisher eventPublisher) {
 		this.accountRepository = accountRepository;
 		this.feePolicy = feePolicy;
+		this.eventPublisher = eventPublisher;
 	}
 
-	public TimeService getTimeService() {
-		return timeService;
-	}
-
-	@Override
+    @Override
 	public void setTimeService(TimeService timeService) {
 		this.timeService = timeService;
 	}
@@ -89,7 +93,7 @@ public class DefaultTransferService implements TransferService {
 				srcAcct.debit(fee);
 			} catch (InsufficientFundsException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				throw new InsufficientFundsException(srcAcct, fee);
 			}
 		}
 
@@ -105,6 +109,14 @@ public class DefaultTransferService implements TransferService {
 
 		accountRepository.updateBalance(srcAcct);
 		accountRepository.updateBalance(dstAcct);
+		
+		eventPublisher.publishEvent(TransferCompletedEvent.builder()
+				.timestamp(new org.joda.time.DateTime())
+				.amount(amount)
+				.sourceAccountId(srcAcctId)
+				.destinationAccountId(dstAcctId)
+				.fee(fee)
+				.build());
 
 		receipt.setFinalSourceAccount(srcAcct);
 		receipt.setFinalDestinationAccount(dstAcct);
