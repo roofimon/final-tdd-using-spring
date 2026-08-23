@@ -17,10 +17,13 @@ package com.bank.service;
 
 import com.bank.domain.InsufficientFundsException;
 import com.bank.domain.TransferReceipt;
+import com.bank.repository.AccountNotFoundException;
 
 public interface TransferService {
 
-	TransferReceipt transfer(double amount, String srcAcctId, String destAcctId) throws InsufficientFundsException;
+	TransferReceipt transfer(double amount, String srcAcctId, String destAcctId)
+			throws InsufficientFundsException, InvalidTransferAmountException, OutOfServiceException,
+			AccountNotFoundException;
 
 	void setMinimumTransferAmount(double minimumTransferAmount);
 	

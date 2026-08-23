@@ -26,6 +26,7 @@ import com.bank.repository.AccountRepository;
 import com.bank.repository.internal.SimpleAccountRepository;
 
 import com.bank.service.FeePolicy;
+import com.bank.service.InvalidTransferAmountException;
 import com.bank.service.OutOfServiceException;
 import com.bank.service.TimeService;
 import com.bank.service.TransferService;
@@ -200,6 +201,30 @@ public class DefaultTransferServiceTest {
 			fail("expected IllegalArgumentException on 9.00 transfer that violates 10.00 minimum");
 		} catch (IllegalArgumentException ex) {
 		}
+	}
+
+	@Test
+	public void testTransferAmountBelowMinimumIncludesValidationDetails() throws InsufficientFundsException {
+		transferService.setMinimumTransferAmount(10.00);
+
+		try {
+			transferService.transfer(9.00, A123_ID, C456_ID);
+			fail("expected InvalidTransferAmountException");
+		} catch (InvalidTransferAmountException ex) {
+			assertThat(ex.getAttemptedAmount(), equalTo(9.00));
+			assertThat(ex.getMinimumAmount(), equalTo(10.00));
+			assertThat(ex.getMessage(), equalTo("Transfer amount must be at least $10.00."));
+		}
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testMinimumTransferAmountMustBePositiveAndFinite() {
+		transferService.setMinimumTransferAmount(Double.NaN);
+	}
+
+	@Test(expected = InvalidTransferAmountException.class)
+	public void testTransferAmountMustBeFinite() throws InsufficientFundsException {
+		transferService.transfer(Double.NaN, A123_ID, C456_ID);
 	}
 
 	@Test

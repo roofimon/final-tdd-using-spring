@@ -15,8 +15,6 @@
  */
 package com.bank.service.internal;
 
-import static java.lang.String.format;
-
 import org.joda.time.LocalTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +24,9 @@ import com.bank.domain.Account;
 import com.bank.domain.InsufficientFundsException;
 import com.bank.domain.TransferReceipt;
 import com.bank.repository.AccountRepository;
+import com.bank.repository.AccountNotFoundException;
 import com.bank.service.FeePolicy;
+import com.bank.service.InvalidTransferAmountException;
 import com.bank.service.OutOfServiceException;
 import com.bank.service.TimeService;
 import com.bank.service.TransferService;
@@ -57,14 +57,19 @@ public class DefaultTransferService implements TransferService {
 
 	@Override
 	public void setMinimumTransferAmount(double minimumTransferAmount) {
+		if (!Double.isFinite(minimumTransferAmount) || minimumTransferAmount <= 0) {
+			throw new IllegalArgumentException("minimum transfer amount must be a positive finite value");
+		}
 		this.minimumTransferAmount = minimumTransferAmount;
 	}
 
 	@Override
 	@Transactional
-	public TransferReceipt transfer(double amount, String srcAcctId, String dstAcctId) throws InsufficientFundsException{
-		if (amount < minimumTransferAmount) {
-			throw new IllegalArgumentException(format("transfer amount must be at least $%.2f", minimumTransferAmount));
+	public TransferReceipt transfer(double amount, String srcAcctId, String dstAcctId)
+			throws InsufficientFundsException, InvalidTransferAmountException, OutOfServiceException,
+			AccountNotFoundException {
+		if (!Double.isFinite(amount) || amount < minimumTransferAmount) {
+			throw new InvalidTransferAmountException(amount, minimumTransferAmount);
 		}
 		if (timeService!=null && !timeService.isServiceAvailable(new LocalTime())) {
 			throw new OutOfServiceException();

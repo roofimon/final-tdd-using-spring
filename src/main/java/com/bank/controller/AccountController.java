@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.bank.domain.Account;
 import com.bank.domain.InsufficientFundsException;
 import com.bank.domain.TransferReceipt;
+import com.bank.repository.AccountNotFoundException;
 import com.bank.repository.AccountRepository;
+import com.bank.service.InvalidTransferAmountException;
+import com.bank.service.OutOfServiceException;
 import com.bank.service.TransferService;
 
 @Controller
@@ -46,7 +49,9 @@ public class AccountController {
 	@RequestMapping(value = "/{srcId}/transfer/{amount}/to/{destId}")
 	@ResponseBody
 	public TransferReceipt handleTransfer(@PathVariable("srcId") String srcId, @PathVariable("amount") double amount,
-			@PathVariable("destId") String destId) throws InsufficientFundsException {
+			@PathVariable("destId") String destId)
+			throws InsufficientFundsException, InvalidTransferAmountException, OutOfServiceException,
+			AccountNotFoundException {
 		return service.transfer(amount, srcId, destId);
 	}
 }
